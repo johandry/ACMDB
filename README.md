@@ -1,0 +1,1 @@
+Autosys Configuration Management Database (ACMDB) is a ruby on rails web application to have information about Autosys Jobs, their owners, the machines and servers related to them as well as other useful and related information. The Configuration Itmes will grow from time to time.
