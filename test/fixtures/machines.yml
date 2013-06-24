@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  server_name: MyString
+  machine_status_id: 
+  ip: MyString
+  os_id: 
+  environment_id: 
+  hosting_id: 
+  backup_server: MyString
+  description: MyString
+  comments: MyText
+
+two:
+  name: MyString
+  server_name: MyString
+  machine_status_id: 
+  ip: MyString
+  os_id: 
+  environment_id: 
+  hosting_id: 
+  backup_server: MyString
+  description: MyString
+  comments: MyText

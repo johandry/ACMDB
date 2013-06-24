@@ -1,0 +1,13 @@
+class CreateEmployees < ActiveRecord::Migration
+  def change
+    create_table :employees do |t|
+      t.string :name
+      t.string :first_name
+      t.string :last_name
+      t.string :email
+      t.references :team, index: true
+
+      t.timestamps
+    end
+  end
+end

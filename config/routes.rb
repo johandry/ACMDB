@@ -1,4 +1,14 @@
 ACMDB::Application.routes.draw do
+  resources :jobs
+
+  resources :employees
+
+  resources :teams
+
+  resources :systems
+
+  resources :machines
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

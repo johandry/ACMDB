@@ -1,0 +1,46 @@
+<%- model_class = Machine -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:server_name) %></th>
+      <th><%= model_class.human_attribute_name(:machine_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:ip) %></th>
+      <th><%= model_class.human_attribute_name(:os_id) %></th>
+      <th><%= model_class.human_attribute_name(:environment_id) %></th>
+      <th><%= model_class.human_attribute_name(:hosting_id) %></th>
+      <th><%= model_class.human_attribute_name(:backup_server) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @machines.each do |machine| %>
+      <tr>
+        <td><%= link_to machine.name,machine_path(machine) %></td>
+        <td><%= machine.server_name %></td>
+        <td><%= MachineStatus.find(machine.machine_status_id).name %></td>
+        <td><%= machine.ip %></td>
+        <td><%= Os.find(machine.os_id).name %></td>
+        <td><%= Environment.find(machine.environment_id).name %></td>
+        <td><%= Hosting.find(machine.hosting_id).name %></td>
+        <td><%= machine.backup_server %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_machine_path(machine), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      machine_path(machine),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_machine_path,
+            :class => 'btn btn-primary' %>

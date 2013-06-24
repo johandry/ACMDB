@@ -1,0 +1,69 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  job_type_id: 
+  box_name_id: 
+  owner: MyString
+  command: MyString
+  machine_id: 
+  permission: MyString
+  date_condition: 1
+  days_of_week: MyString
+  start_times: MyString
+  condition: MyString
+  short_description: MyString
+  str_out_file: MyString
+  str_err_file: MyString
+  alarm_if_fail: 1
+  avg_runtime_min: 1.5
+  avg_runtime_sec: 1.5
+  max_runtime_min: MyString
+  system_id: 
+  description: MyText
+  priority_id: 
+  critical: MyString
+  actions: MyText
+  notes: MyText
+  submited_by_id: MyString
+  integer: MyString
+  created_on: 2013-06-24
+  modified_by_id: MyString
+  integer: MyString
+  last_modified_on: 2013-06-24
+  update_log: MyText
+  job_status_id: 
+
+two:
+  name: MyString
+  job_type_id: 
+  box_name_id: 
+  owner: MyString
+  command: MyString
+  machine_id: 
+  permission: MyString
+  date_condition: 1
+  days_of_week: MyString
+  start_times: MyString
+  condition: MyString
+  short_description: MyString
+  str_out_file: MyString
+  str_err_file: MyString
+  alarm_if_fail: 1
+  avg_runtime_min: 1.5
+  avg_runtime_sec: 1.5
+  max_runtime_min: MyString
+  system_id: 
+  description: MyText
+  priority_id: 
+  critical: MyString
+  actions: MyText
+  notes: MyText
+  submited_by_id: MyString
+  integer: MyString
+  created_on: 2013-06-24
+  modified_by_id: MyString
+  integer: MyString
+  last_modified_on: 2013-06-24
+  update_log: MyText
+  job_status_id: 

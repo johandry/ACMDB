@@ -1,0 +1,91 @@
+<%- model_class = Job -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:job_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:box_name_id) %></th>
+      <th><%= model_class.human_attribute_name(:owner) %></th>
+      <th><%= model_class.human_attribute_name(:command) %></th>
+      <th><%= model_class.human_attribute_name(:machine_id) %></th>
+      <th><%= model_class.human_attribute_name(:permission) %></th>
+      <th><%= model_class.human_attribute_name(:date_condition) %></th>
+      <th><%= model_class.human_attribute_name(:days_of_week) %></th>
+      <th><%= model_class.human_attribute_name(:start_times) %></th>
+      <th><%= model_class.human_attribute_name(:condition) %></th>
+      <th><%= model_class.human_attribute_name(:short_description) %></th>
+      <th><%= model_class.human_attribute_name(:str_out_file) %></th>
+      <th><%= model_class.human_attribute_name(:str_err_file) %></th>
+      <th><%= model_class.human_attribute_name(:alarm_if_fail) %></th>
+      <th><%= model_class.human_attribute_name(:avg_runtime_min) %></th>
+      <th><%= model_class.human_attribute_name(:avg_runtime_sec) %></th>
+      <th><%= model_class.human_attribute_name(:max_runtime_min) %></th>
+      <th><%= model_class.human_attribute_name(:system_id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:priority_id) %></th>
+      <th><%= model_class.human_attribute_name(:critical) %></th>
+      <th><%= model_class.human_attribute_name(:actions) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:submited_by_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_on) %></th>
+      <th><%= model_class.human_attribute_name(:modified_by_id) %></th>
+      <th><%= model_class.human_attribute_name(:last_modified_on) %></th>
+      <th><%= model_class.human_attribute_name(:update_log) %></th>
+      <th><%= model_class.human_attribute_name(:job_status_id) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to job.id, job_path(job) %></td>
+        <td><%= link_to job.name,job_path(job) %></td>
+        <td><%= JobType.find(job.job_type_id).name %></td>
+        <td><%= Job.find(job.box_name_id).name if job.box_name_id %></td>
+        <td><%= job.owner %></td>
+        <td><%= job.command %></td>
+        <td><%= Machine.find(job.machine_id).name if job.machine_id %></td>
+        <td><%= job.permission %></td>
+        <td><%= job.date_condition %></td>
+        <td><%= job.days_of_week %></td>
+        <td><%= job.start_times %></td>
+        <td><%= job.condition %></td>
+        <td><%= job.short_description %></td>
+        <td><%= job.str_out_file %></td>
+        <td><%= job.str_err_file %></td>
+        <td><%= job.alarm_if_fail %></td>
+        <td><%= job.avg_runtime_min %></td>
+        <td><%= job.avg_runtime_sec %></td>
+        <td><%= job.max_runtime_min %></td>
+        <td><%= System.find(job.system_id).name if job.system_id %></td>
+        <td><%= job.description %></td>
+        <td><%= Priority.find(job.priority_id).name if job.priority_id %></td>
+        <td><%= job.critical %></td>
+        <td><%= job.actions %></td>
+        <td><%= job.notes %></td>
+        <td><%= Employee.find(job.submited_by_id).name %></td>
+        <td><%= job.created_on %></td>
+        <td><%= Employee.find(job.modified_by_id).name %></td>
+        <td><%= job.last_modified_on %></td>
+        <td><%= job.update_log %></td>
+        <td><%= JobStatus.find(job.job_status_id).name %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_job_path(job), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      job_path(job),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_job_path,
+            :class => 'btn btn-primary' %>
