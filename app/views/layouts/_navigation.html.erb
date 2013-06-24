@@ -1,1 +1,20 @@
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</a>
+
 <%= link_to "Home", root_path, :class => 'brand' %>
+<div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li><%= link_to "Jobs", jobs_path %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to "Machines", machines_path %></li>
+          <li class="divider-vertical"></li>
+        </ul>
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+</div>
