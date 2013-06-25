@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130624153701) do
+ActiveRecord::Schema.define(version: 20130625162314) do
 
   create_table "contacts", force: true do |t|
     t.integer  "job_id"
@@ -88,10 +88,9 @@ ActiveRecord::Schema.define(version: 20130624153701) do
     t.string   "critical"
     t.text     "actions"
     t.text     "notes"
-    t.string   "submited_by_id"
-    t.string   "integer"
+    t.integer  "submited_by_id"
     t.date     "created_on"
-    t.string   "modified_by_id"
+    t.integer  "modified_by_id"
     t.date     "last_modified_on"
     t.text     "update_log"
     t.integer  "job_status_id"

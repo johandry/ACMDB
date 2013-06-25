@@ -41,13 +41,12 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job) %></td>
         <td><%= link_to job.name,job_path(job) %></td>
-        <td><%= JobType.find(job.job_type_id).name %></td>
-        <td><%= Job.find(job.box_name_id).name if job.box_name_id %></td>
+        <td><%= JobType.find(job.job_type_id).name if job.job_type_id %></td>
+        <td><%= Job.find(job.box_name_id).name if job.box_name %></td>
         <td><%= job.owner %></td>
         <td><%= job.command %></td>
-        <td><%= Machine.find(job.machine_id).name if job.machine_id %></td>
+        <td><%= link_to Machine.find(job.machine_id).name, machine_path(job.machine_id) if job.machine %></td>
         <td><%= job.permission %></td>
         <td><%= job.date_condition %></td>
         <td><%= job.days_of_week %></td>
@@ -60,18 +59,18 @@
         <td><%= job.avg_runtime_min %></td>
         <td><%= job.avg_runtime_sec %></td>
         <td><%= job.max_runtime_min %></td>
-        <td><%= System.find(job.system_id).name if job.system_id %></td>
+        <td><%= System.find(job.system_id).name if job.system %></td>
         <td><%= job.description %></td>
-        <td><%= Priority.find(job.priority_id).name if job.priority_id %></td>
+        <td><%= Priority.find(job.priority_id).name if job.priority %></td>
         <td><%= job.critical %></td>
         <td><%= job.actions %></td>
         <td><%= job.notes %></td>
-        <td><%= Employee.find(job.submited_by_id).name %></td>
+        <td><%= Employee.find(job.submited_by_id).name if job.submited_by_id %></td>
         <td><%= job.created_on %></td>
-        <td><%= Employee.find(job.modified_by_id).name %></td>
+        <td><%= mployee.find(job.modified_by_id).name if job.modified_by_id %></td>
         <td><%= job.last_modified_on %></td>
         <td><%= job.update_log %></td>
-        <td><%= JobStatus.find(job.job_status_id).name %></td>
+        <td><%= JobStatus.find(job.job_status_id).name if job.job_status %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_job_path(job), :class => 'btn btn-mini' %>

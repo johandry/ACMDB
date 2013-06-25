@@ -32,7 +32,7 @@ class JobsController < ApplicationController
     @systems = System.all
     @priorities = Priority.all
     @employees = Employee.all
-    @job_status = JobStatus.all
+    @job_status = JobStatus.all    
   end
 
   # POST /jobs
@@ -83,6 +83,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name, :job_type_id, :box_name_id, :owner, :command, :machine_id, :permission, :date_condition, :days_of_week, :start_times, :condition, :short_description, :str_out_file, :str_err_file, :alarm_if_fail, :avg_runtime_min, :avg_runtime_sec, :max_runtime_min, :system_id, :description, :priority_id, :critical, :actions, :notes, :submited_by_id, :integer, :created_on, :modified_by_id, :last_modified_on, :update_log, :job_status_id)
+      params.require(:job).permit(:name, :job_type_id, :box_name_id, :owner, :command, :machine_id, :permission, :date_condition, :days_of_week, :start_times, :condition, :short_description, :str_out_file, :str_err_file, :alarm_if_fail, :avg_runtime_min, :avg_runtime_sec, :max_runtime_min, :system_id, :description, :priority_id, :critical, :actions, :notes, :submited_by_id, :created_on, :modified_by_id, :last_modified_on, :update_log, :job_status_id)
     end
 end

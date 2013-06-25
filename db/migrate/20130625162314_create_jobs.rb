@@ -25,11 +25,9 @@ class CreateJobs < ActiveRecord::Migration
       t.string :critical
       t.text :actions
       t.text :notes
-      t.string :submited_by_id
-      t.string :integer
+      t.integer :submited_by_id
       t.date :created_on
-      t.string :modified_by_id
-      t.string :integer
+      t.integer :modified_by_id
       t.date :last_modified_on
       t.text :update_log
       t.references :job_status, index: true

@@ -1,11 +1,11 @@
 <%= simple_form_for @machine, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :server_name, placeholder: '.whopper.com' %>
-  <%= f.input :machine_status_id, collection: @machine_statuses %>
+  <%= f.association :machine_status_id %>
   <%= f.input :ip %>
-  <%= f.input :os_id, label: 'OS', collection: @oses %>
-  <%= f.input :environment_id, collection: @environments %>
-  <%= f.input :hosting_id, collection: @hostings %>
+  <%= f.association :os_id, label: 'OS' %>
+  <%= f.association :environment_id %>
+  <%= f.association :hosting_id %>
   <%= f.input :backup_server, placeholder: 'b' %>
   <%= f.input :description %>
   <%= f.input :comments %>

@@ -21,11 +21,11 @@
       <tr>
         <td><%= link_to machine.name,machine_path(machine) %></td>
         <td><%= machine.server_name %></td>
-        <td><%= MachineStatus.find(machine.machine_status_id).name %></td>
+        <td><%= MachineStatus.find(machine.machine_status_id).name if machine.machine_status %></td>
         <td><%= machine.ip %></td>
-        <td><%= Os.find(machine.os_id).name %></td>
-        <td><%= Environment.find(machine.environment_id).name %></td>
-        <td><%= Hosting.find(machine.hosting_id).name %></td>
+        <td><%= Os.find(machine.os_id).name if machine.os %></td>
+        <td><%= Environment.find(machine.environment_id).name if machine.environment %></td>
+        <td><%= Hosting.find(machine.hosting_id).name if machine.hosting %></td>
         <td><%= machine.backup_server %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
