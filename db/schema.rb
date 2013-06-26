@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20130625162314) do
     t.string   "command"
     t.integer  "machine_id"
     t.string   "permission"
-    t.integer  "date_condition"
+    t.boolean  "date_condition"
     t.string   "days_of_week"
     t.string   "start_times"
     t.string   "condition"

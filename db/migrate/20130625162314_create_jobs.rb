@@ -8,7 +8,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :command
       t.references :machine, index: true
       t.string :permission
-      t.integer :date_condition
+      t.boolean :date_condition
       t.string :days_of_week
       t.string :start_times
       t.string :condition

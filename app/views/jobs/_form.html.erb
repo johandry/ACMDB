@@ -1,10 +1,10 @@
 <%= simple_form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
 	<%= f.input :name %>
-	<%= f.association :job_type_id %>
-	<%= f.association :box_name_id %>
+	<%= f.association :job_type %>
+	<%= f.association :box_name %>
 	<%= f.input :owner, placeholder: 'bkpbtch@bkglobal' %>
 	<%= f.input :command %>
-	<%= f.association :machine_id %>
+	<%= f.association :machine %>
 	<%= f.input :permission, placeholders: 'gx,wx,mx' %>
 	<%= f.input :date_condition %>
 	<%= f.input :days_of_week %>
@@ -19,16 +19,16 @@
 	<%= f.input :max_runtime_min, label: 'Maximum Runtime (Minutes)' %>
 	<%= f.input :system_id, collection: @systems %>
 	<%= f.input :description %>
-	<%= f.input :priority_id, collection: @priorities %>
+	<%= f.association :priority %>
 	<%= f.input :critical, placeholders: '0' %>
 	<%= f.input :actions %>
 	<%= f.input :notes %>
-	<%= f.association :submited_by_id %>
+	<%= f.association :submited_by %>
 	<%= f.input :created_on %>
-	<%= f.association :modified_by_id %>
+	<%= f.association :modified_by %>
 	<%= f.input :last_modified_on %>
 	<%= f.input :update_log %>
-	<%= f.association :job_status_id %>
+	<%= f.association :job_status %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

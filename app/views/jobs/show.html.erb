@@ -7,15 +7,15 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @job.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:job_type_id) %>:</strong></dt>
-  <dd><%= JobType.find(@job.job_type_id).name %></dd>
+  <dd><%= JobType.find(@job.job_type_id).name if @job.job_type %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:box_name_id) %>:</strong></dt>
-  <dd><%= Job.find(@job.box_name_id).name %></dd>
+  <dd><%= Job.find(@job.box_name_id).name if @job.box_name %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:owner) %>:</strong></dt>
   <dd><%= @job.owner %></dd>
   <dt><strong><%= model_class.human_attribute_name(:command) %>:</strong></dt>
   <dd><%= @job.command %></dd>
   <dt><strong><%= model_class.human_attribute_name(:machine_id) %>:</strong></dt>
-  <dd><%= Machine.find(@job.machine_id).name %></dd>
+  <dd><%= Machine.find(@job.machine_id).name if @job.machine %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:permission) %>:</strong></dt>
   <dd><%= @job.permission %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_condition) %>:</strong></dt>
@@ -41,11 +41,11 @@
   <dt><strong><%= model_class.human_attribute_name(:max_runtime_min) %>:</strong></dt>
   <dd><%= @job.max_runtime_min %></dd>
   <dt><strong><%= model_class.human_attribute_name(:system_id) %>:</strong></dt>
-  <dd><%= System.find(@job.system_id).name %></dd>
+  <dd><%= System.find(@job.system_id).name if @job.system %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @job.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:priority_id) %>:</strong></dt>
-  <dd><%= Priority.find(@job.priority_id).name %></dd>
+  <dd><%= Priority.find(@job.priority_id).name if @job.priority %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:critical) %>:</strong></dt>
   <dd><%= @job.critical %></dd>
   <dt><strong><%= model_class.human_attribute_name(:actions) %>:</strong></dt>
@@ -53,17 +53,17 @@
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @job.notes %></dd>
   <dt><strong><%= model_class.human_attribute_name(:submited_by_id) %>:</strong></dt>
-  <dd><%= Employee.find(@job.submited_by_id).name %></dd>
+  <dd><%= Employee.find(@job.submited_by_id).name if @job.submited_by %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:created_on) %>:</strong></dt>
   <dd><%= @job.created_on %></dd>
   <dt><strong><%= model_class.human_attribute_name(:modified_by_id) %>:</strong></dt>
-  <dd><%= Employee.find(@job.modified_by_id).name %></dd>
+  <dd><%= Employee.find(@job.modified_by_id).name if @job.modified_by %>&nbsp;</dd>
   <dt><strong><%= model_class.human_attribute_name(:last_modified_on) %>:</strong></dt>
   <dd><%= @job.last_modified_on %></dd>
   <dt><strong><%= model_class.human_attribute_name(:update_log) %>:</strong></dt>
   <dd><%= @job.update_log %></dd>
   <dt><strong><%= model_class.human_attribute_name(:job_status_id) %>:</strong></dt>
-  <dd><%= JobStatus.find(@job.job_status_id).name %></dd>
+  <dd><%= JobStatus.find(@job.job_status_id).name if @job.job_status %>&nbsp;</dd>
 </dl>
 
 <div class="form-actions">
